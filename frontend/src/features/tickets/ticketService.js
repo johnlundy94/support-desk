@@ -49,11 +49,7 @@ const closeTicket = async (ticketId, token) => {
     },
   };
 
-  const response = await axios.put(
-    API_URL + ticketId,
-    { status: closed },
-    config
-  );
+  const response = await axios.put(API_URL + ticketId, config);
 
   return response.data;
 };

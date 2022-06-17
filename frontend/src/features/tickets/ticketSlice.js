@@ -105,7 +105,7 @@ export const ticketSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
       })
-      .addCase(createTicket.rejected, (state) => {
+      .addCase(createTicket.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
@@ -118,7 +118,7 @@ export const ticketSlice = createSlice({
         state.isSuccess = true;
         state.tickets = action.payload;
       })
-      .addCase(getTickets.rejected, (state) => {
+      .addCase(getTickets.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
@@ -131,7 +131,7 @@ export const ticketSlice = createSlice({
         state.isSuccess = true;
         state.ticket = action.payload;
       })
-      .addCase(getTicket.rejected, (state) => {
+      .addCase(getTicket.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
